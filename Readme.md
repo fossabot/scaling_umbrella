@@ -4,8 +4,8 @@
 
 One-time virtual environment setup:
 
-* `python3 -m virtualenv venv`
-* `. venv/bin/activate`
+* `python3 -m virtualenv .venv`
+* `. .venv/bin/activate`
 
 Install dependencies:
 
