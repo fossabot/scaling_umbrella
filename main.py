@@ -18,7 +18,6 @@ def load_dtd():
 
 def xml_from_file(file_path):
     tree = etree.parse(file_path)
-    print(file_path, etree.tostring(tree.getroot()))
     return tree
 
 
@@ -28,9 +27,11 @@ def validate_xml(dtd, xml):
 
 if __name__ == '__main__':
     parser.add_argument('file1', help='first file to check')
+    parser.add_argument('file2', help='second file to check')
     args = parser.parse_args()
     print_hi('PyCharm')
-    dtd = load_dtd()
-    xml = xml_from_file(args.file1)
-    validate_xml(dtd, xml)
-
+    xml_def = load_dtd()
+    xml1 = xml_from_file(args.file1)
+    validate_xml(xml_def, xml1)
+    xml2 = xml_from_file(args.file2)
+    validate_xml(xml_def, xml2)
